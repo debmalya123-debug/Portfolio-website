@@ -144,7 +144,7 @@ export default function Home() {
               avatarUrl="/pfp2.png"
               showUserInfo
               enableTilt={true}
-              enableMobileTilt
+              enableMobileTilt={true}
               onContactClick={() => {}}
               behindGlowColor="hsla(183, 100%, 50%, 0.6)"
               behindGlowEnabled

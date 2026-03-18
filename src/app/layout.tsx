@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Debmalya Paul",
-  description: "Portfolio Arcade",
+  description: "Portfolio",
 };
 
 export default function RootLayout({
