@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Something's Cooking",
+  title: "Debmalya Paul",
   description: "Portfolio Arcade",
 };
 
