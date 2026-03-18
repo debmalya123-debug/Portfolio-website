@@ -6,6 +6,8 @@ import GradientText from "@/components/GradientText";
 import BorderGlow from "@/components/BorderGlow";
 import ProfileCard from "@/components/ProfileCard";
 import LineWaves from "@/components/LineWaves";
+import AudioPlayer from "@/components/AudioPlayer";
+import FuzzyText from "@/components/FuzzyText";
 import { User, ChevronDown } from "lucide-react";
 
 export default function Home() {
@@ -108,11 +110,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3: Profile Card */}
-      <section className="relative z-10 flex min-h-[100vh] w-full flex-col items-center justify-center px-4 sm:px-8 py-20 pointer-events-auto overflow-hidden">
+      {/* SECTIONS 3 & 4 WRAPPER */}
+      <div className="relative w-full z-10">
         
-        {/* Background Line Waves Layer */}
-        <div className="absolute inset-0 z-0 pointer-events-auto [mask-image:linear-gradient(to_bottom,transparent_0%,black_40%,black_100%)]">
+        {/* Shared Background Line Waves Layer */}
+        <div className="absolute inset-0 z-0 pointer-events-auto [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]">
           <LineWaves
             speed={0.1}
             innerLineCount={12}
@@ -130,24 +132,73 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 w-full max-w-sm mx-auto flex items-center justify-center pointer-events-auto">
-          <ProfileCard
-            name="Debmalya"
-            title="Hesitation is Defeat"
-            handle="is.that.debmalya"
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl="/pfp2.png"
-            showUserInfo
-            enableTilt={true}
-            enableMobileTilt
-            onContactClick={() => {}}
-            behindGlowColor="hsla(183, 100%, 50%, 0.6)"
-            behindGlowEnabled
-            innerGradient="linear-gradient(145deg,hsla(300, 40%, 45%, 0.5) 0%,hsla(183, 60%, 70%, 0.2) 100%)"
-          />
-        </div>
-      </section>
+        {/* SECTION 3: Profile Card */}
+        <section className="relative z-10 flex min-h-[100vh] w-full flex-col items-center justify-center px-4 sm:px-8 py-20 pointer-events-none">
+          <div className="relative z-10 w-full max-w-sm mx-auto flex items-center justify-center pointer-events-auto">
+            <ProfileCard
+              name="Debmalya"
+              title="迷えば、敗れる"
+              handle="is.that.debmalya"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl="/pfp2.png"
+              showUserInfo
+              enableTilt={true}
+              enableMobileTilt
+              onContactClick={() => {}}
+              behindGlowColor="hsla(183, 100%, 50%, 0.6)"
+              behindGlowEnabled
+              innerGradient="linear-gradient(145deg,hsla(300, 40%, 45%, 0.5) 0%,hsla(183, 60%, 70%, 0.2) 100%)"
+            />
+          </div>
+        </section>
+
+        {/* SECTION 4: Music (Radiohead) */}
+        <section className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-4 sm:px-8 py-20 pointer-events-none">
+          <div className="w-full max-w-5xl mx-auto flex flex-col items-center justify-center gap-12 sm:gap-20 pointer-events-auto">
+            <div className="text-center space-y-8 relative z-10 w-full px-4">
+              <motion.h2 
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+                className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-[0.05em] sm:tracking-[0.1em] text-white drop-shadow-[0_0_20px_rgba(0,243,255,0.8)]"
+              >
+                LISTEN TO MY FAV BAND
+              </motion.h2>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="text-[#fc42ff] font-black tracking-[0.4em] sm:tracking-[0.6em] uppercase drop-shadow-[0_0_15px_rgba(252,66,255,0.5)] flex justify-center"
+              >
+                <FuzzyText 
+                  baseIntensity={0.1}
+                  hoverIntensity={0.5}
+                  enableHover
+                  fontSize="clamp(4rem, 2vw, 1.5rem)"
+                  color="#ffffff"
+                  fontWeight={900}
+                >
+                  Radiohead
+                </FuzzyText>
+              </motion.div>
+            </div>
+            
+            <div className="w-full flex justify-center mt-6 relative z-10">
+              <AudioPlayer tracks={[
+                { src: "/Radiohead - Let Down.mp3", title: "Let Down", artist: "Radiohead" },
+                { src: "/Creep.mp3", title: "Creep", artist: "Radiohead" },
+                { src: "/Radiohead - No Surprises.mp3", title: "No Surprises", artist: "Radiohead" },
+                { src: "/Exit Music (For A Film).mp3", title: "Exit Music", artist: "Radiohead" },
+                { src: "/Radiohead - Fake Plastic Trees.mp3", title: "Fake Plastic Trees", artist: "Radiohead" }
+              ]} />
+            </div>
+          </div>
+        </section>
+
+      </div>
 
     </main>
   );
