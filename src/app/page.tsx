@@ -80,8 +80,8 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: About Me */}
-      <section className="relative z-10 flex w-full flex-col items-center justify-start px-4 sm:px-8 pt-4 sm:pt-8 pb-32 pointer-events-auto">
-        <div className="w-full max-w-3xl mx-auto">
+      <section className="relative z-10 flex w-full flex-col items-center justify-start px-6 sm:px-8 pt-8 sm:pt-12 pb-32 pointer-events-auto">
+        <div className="w-[90%] sm:w-full max-w-3xl mx-auto my-4 sm:my-0 shadow-2xl rounded-[28px]">
           <BorderGlow
             edgeSensitivity={30}
             glowColor="40 80 80"
@@ -93,7 +93,7 @@ export default function Home() {
             animated={true}
             colors={['#00f3ff', '#fc42ff', '#42fcff']} // Adjusted to match the cyan/pink theme
           >
-            <div className="p-6 sm:p-10 flex flex-col items-center sm:items-start text-center sm:text-left">
+            <div className="p-5 sm:p-10 flex flex-col items-center sm:items-start text-center sm:text-left">
               <h2 className="flex items-center justify-center sm:justify-start gap-3 text-3xl sm:text-4xl font-black tracking-[-0.05em] text-white mb-4 drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]">
                 <User className="w-8 h-8 sm:w-10 sm:h-10 text-[#00f3ff]" />
                 ABOUT ME
