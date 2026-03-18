@@ -145,6 +145,8 @@ export default function Home() {
               showUserInfo
               enableTilt={true}
               enableMobileTilt={true}
+              mobileTiltSensitivity={1}
+              miniAvatarUrl="/image.png"
               onContactClick={() => {}}
               behindGlowColor="hsla(183, 100%, 50%, 0.6)"
               behindGlowEnabled
